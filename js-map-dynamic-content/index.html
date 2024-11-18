@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #budget-container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 30px;
+
+            margin: auto;
+            width: 80%;
+        }
+
+        .budget-box{
+            border: 1px solid #eeee;
+            padding: 20px;
+            border-radius: 10px;
+         
+        }
+
+        .budget-box span{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="budget-container"> </div>
+    
+
+
+
+    <script>
+
+        const BudgetData = [
+            {
+                id: 1,
+                icon: '💵',
+                title: 'Cheap',
+                description:'Stay conscious of costs',
+            },
+
+            {
+                id: 2,
+                icon: '💰',
+                title: 'Moderate',
+                description:'Keep cost on the average side',
+            },
+
+            {
+                id: 3,
+                icon: '💸',
+                title: 'Luxury',
+                description:'Dont worry about cost',
+            },
+
+        
+        
+        ]
+
+        const budgetBoxContainer = document.getElementById("budget-container");
+        BudgetData.map((singleItem)=>{
+            const budgeBox = document.createElement('div');
+            budgeBox.classList.add('budget-box');
+            budgeBox.innerHTML = `
+              <span>${singleItem.icon}</span>
+            <h2>${singleItem.title}</h2>
+            <p>${singleItem.description}</p>
+
+
+            `
+
+            budgetBoxContainer.appendChild(budgeBox);
+
+        })
+    </script>
+</body>
+</html>
